@@ -34,7 +34,7 @@ public:
     LinkedList();
     
     void ListInit();
-    void LInsert(LData data);
+    void SInsert(LData data);
     void FInsert(LData data);
 
     int LFirst(LData * pdata);

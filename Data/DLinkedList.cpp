@@ -63,11 +63,27 @@ void LinkedList::FInsert(LData data)
     
     this->numOfData += 1;
 }
-void LinkedList::LInsert(LData data)
+void LinkedList::SInsert(LData data)
 {
-    //
+    Node * newNode = new Node(-1);
+    Node * pred = this->head;
+    newNode->data = data;
+    
+    while(pred->next != NULL && this->comp(data, pred->next->data) != 0)
+    {
+        pred = pred->next;
+    }
+    
+    newNode->next = pred->next;
+    pred->next = newNode;
+    
+    (this->numOfData)++;
 }
 int LinkedList::LCount()
 {
     return this->numOfData;
+}
+void LinkedList::SetSortRule(int (*comp)(LData, LData))
+{
+    this->comp = comp;
 }

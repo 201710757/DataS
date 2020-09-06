@@ -9,19 +9,23 @@
 #include<iostream>
 #include"DLinkedList.h"
 using namespace std;
-
+int ben(int d1, int d2)
+{
+    return d1 < d2 ? 0:1;
+}
 int main(void)
 {
     LinkedList * list = new LinkedList();
+    list->SetSortRule(ben);
     int data;
     
-    list->FInsert(11);
-    list->FInsert(22);
-    list->FInsert(13);
-    list->FInsert(22);
-    list->FInsert(15);
-    list->FInsert(16);
-    list->FInsert(17);
+    list->SInsert(11);
+    list->SInsert(22);
+    list->SInsert(13);
+    list->SInsert(22);
+    list->SInsert(15);
+    list->SInsert(16);
+    list->SInsert(17);
     
     cout<<"DATA CNT : "<<list->LCount()<<endl;
     
