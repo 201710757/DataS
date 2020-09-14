@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -W -Wall
-TARGET = linkedList_exe
-OBJECTS = CLinkedList.o main_CLinkedList.o
+TARGET = custom_linkedList_exe
+OBJECTS = CLinkedList.o employeeMain.o 
 
 all : $(TARGET)
 

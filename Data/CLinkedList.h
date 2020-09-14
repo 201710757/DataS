@@ -6,12 +6,16 @@
 
 typedef int Data;
 
+
 class Node
 {
     public:
-        Data data;
+        /*For Employee*/
+        char * name;
+        /*============*/
+        Data data;      //If employeeMain.cpp -> Employee Number
         Node * next;
-        Node(Data d1);
+        Node(Data d1, char *n);
 };
 
 class CList
@@ -23,14 +27,15 @@ class CList
         int numOfData;
         CList();
 
-        void LInsert(Data data);
-        void LInsertFront(Data data);
-
-        int LFirst(Data * data);
-        int LNext(Data * data);
+        void LInsert(Data data, char *n);
+        void LInsertFront(Data data, char *n);
+        
+        int LFirst(Data * data, char *pname);
+        int LNext(Data * data, char *pname);
         Data LRemove();
         int LCount();
-
+        Data returnEmployee(char *n, int cnt); //For employeeMain.cpp
+        int checkSame(char * s1, char * s2);
 };
 
 #endif
