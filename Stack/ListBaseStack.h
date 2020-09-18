@@ -30,7 +30,7 @@ class Stack
         void infix(char * clist);
         void prefix(char * clist);
         void postfix(char * clist);
-        
+        int calcStack(char * clist);
 };
 
 #endif

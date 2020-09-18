@@ -73,9 +73,17 @@ void Stack::postfix(char * clist)
             // 43 45 42 47
             switch(clist[i])
             {
+                case '(': 
+                    oper->SPush(clist[i]);
+                    break;
+                case ')':
+                    while(oper->SPeek() != '(')
+                        res->SPush(oper->SPop());
+                    oper->SPop();
+                    break;
                 case '+':
                 case '-': 
-                    if(oper->SIsEmpty() == TRUE)
+                    if(oper->SIsEmpty() == TRUE || oper->SPeek() == '(')
                         oper->SPush(clist[i]);
                     else
                     {
@@ -103,6 +111,52 @@ void Stack::postfix(char * clist)
         arr[p++] = res->SPop();
     
     for(int i=le-1;i>=0;i--)
+    {
         cout<<arr[i]<<" ";
+    }
     cout<<endl;
+    
+}
+int Stack::calcStack(char * clist)
+{
+    Stack * oper = new Stack();
+    Stack * numb = new Stack();
+
+    Stack * l = new Stack();
+    int res = 0;
+    int le = strlen(clist);
+    
+    char p1, p2;
+
+    for(int i=le-1;i>=0;i--)
+        l->SPush(clist[i]);
+    while(l->SIsEmpty() == FALSE)
+    {
+        if(l->SPeek() >= 48 && l->SPeek() <= 57)
+            numb->SPush(l->SPop()-48);
+        else
+        {
+            p2 = numb->SPop();
+            p1 = numb->SPop();
+            switch(l->SPeek())
+            {
+                case '+':
+                    numb->SPush(p1+p2);
+                    break;
+                case '-':
+                    numb->SPush(p1-p2);
+                    break;
+                case '*':
+                    numb->SPush(p1*p2);
+                    break;
+                case '/':
+                    numb->SPush(p1/p2);
+                    break;
+                default:
+                    break;
+            }
+            l->SPop(); 
+        }
+    }
+    return numb->SPop();
 }
