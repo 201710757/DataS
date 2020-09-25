@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -W -Wall
-TARGET = Queue_exe
+TARGET = ListQueue_exe
 OBJECTS = CircularQueue.o CircularQueueMain.o
 
 all : $(TARGET)
