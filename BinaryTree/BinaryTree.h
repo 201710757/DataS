@@ -10,6 +10,15 @@ class BTreeNode
         BTData data;
         BTreeNode * left;
         BTreeNode * right;
+
+        BTData GetData();
+        void SetData(BTData btd);
+
+        BTreeNode * GetLeftSubTree();
+        BTreeNode * GetRightSubTree();
+
+        void MakeLeftSubTree(BTreeNode * sub);
+        void MakeRightSubTree(BTreeNode * sub);
 };
 
 #endif
