@@ -3,6 +3,7 @@
 
 typedef int BTData;
 typedef void VisitFuncPtr(BTData data);
+
 class BTreeNode
 {
     public:

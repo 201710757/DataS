@@ -30,4 +30,3 @@ void ShowIntData(BTData data)
     cout<<data<<"!"<<endl;
 }
 
-
