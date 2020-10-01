@@ -15,6 +15,7 @@ void PriQue::PEnqueue(PQData data)
 {
     this->ppq->HInsert(data);
 }
+
 PQData PriQue::PDequeue()
 {
     return this->ppq->HDelete();

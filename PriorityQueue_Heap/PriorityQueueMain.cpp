@@ -11,7 +11,6 @@ int main(void)
 {
     PriQue * pq = new PriQue(comp);
    
-
     pq->PEnqueue('A');
     pq->PEnqueue('B');
     pq->PEnqueue('C');
@@ -19,7 +18,6 @@ int main(void)
     pq->PEnqueue('E');
 
     cout<<pq->PDequeue()<<endl;
-
 
     pq->PEnqueue('A');
     pq->PEnqueue('B');

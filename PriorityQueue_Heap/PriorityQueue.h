@@ -12,10 +12,10 @@ class PriQue
         PQueue * ppq;
         
         PriQue(PriorityComp pc);
+
         int PQIsEmpty();
         void PEnqueue(PQData data);
         PQData PDequeue();
 };
-
 
 #endif
