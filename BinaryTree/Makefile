@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -W -Wall
-TARGET = BTree_exe
+TARGET = BinaryTree_exe
 OBJECTS = BinaryTree.o BinaryTreeMain.o
 
 all : $(TARGET)
