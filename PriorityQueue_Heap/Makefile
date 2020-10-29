@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -W -Wall
-TARGET = BinaryTree_exe
-OBJECTS = BinaryTree.o BinaryTreeMain.o
+TARGET = Priority_Queue_exe
+OBJECTS = PriorityQueue.o PriorityQueueMain.o UsefulHeap.o
 
 all : $(TARGET)
 
